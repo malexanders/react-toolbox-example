@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import InputAutocomplete from '../util/InputAutocomplete.js';
 import Input from 'react-toolbox/lib/input';
-import InputTest from './inputs.jsx';
+// import InputTest from './inputs.jsx';
 
 
 // import keydown from 'react-keydown'
@@ -75,10 +75,7 @@ export default class MapForm extends React.Component {
 					onSubmit={this.handleSubmit.bind(this)}>
 
 
-				<Input id="from" type='text' name="from" value={this.state.from} label='' hint='With Hint' required icon='add_location' />
-				<Input id="to" type='text' value={this.state.hint} label='' hint='With Hint' required icon='add_location' />
-				<Input id="radius" ref="radius" type='text' name="radius" label="radius"  hint='With Hint' required icon='all_out' />
-				<Input id="search" ref="search" type='text' value={this.state.hint} hint='With Hint' required icon='search' />
+				
 
 
 			<input id="mapFormSubmit" type="submit" value="Submit" />

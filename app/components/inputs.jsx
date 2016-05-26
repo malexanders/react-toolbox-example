@@ -1,10 +1,13 @@
+import React from 'react';
 import Input from 'react-toolbox/lib/input';
 
 class InputTest extends React.Component {
   state = { name: '', phone: '', email: '', hint: '' };
 
-  handleChange = (name, value) => {
-    this.setState({...this.state, [name]: value});
+  handleChange((name, value){
+    this.setState(
+		{name: value}
+	);
   };
 
   render () {
