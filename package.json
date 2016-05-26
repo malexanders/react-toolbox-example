@@ -3,6 +3,9 @@
   "version": "0.11.4",
   "description": "A set of complementary tools to ReactJS.",
   "author": "React Toolbox Team (http://github.com/react-toolbox)",
+  "babel": {
+  	
+	},
   "contributors": [
     {
       "name": "Javi Jimenez Villar",
