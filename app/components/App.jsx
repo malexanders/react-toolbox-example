@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MapForm from './MapForm.jsx';
 import GMap from './GMap';
 import FindRoutes from '../util/FindRoutes.js'
+import style from './style';
 
 var directionsService,
 			directionsDisplay,
@@ -38,9 +39,8 @@ export default class MapControl extends React.Component {
 	}
 	render() {
 		return (
-			<div className="MapControl">
-				<h1>Search</h1>
-				<MapForm
+			<div className={style.mapControl}>
+				<MapForm className={style.calculateRoute}
 					onFormSubmit={this.handleFormSubmit.bind(this)}
 					map={this.state.map}
 				/>

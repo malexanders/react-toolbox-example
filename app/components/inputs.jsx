@@ -2,22 +2,21 @@ import React from 'react';
 import Input from 'react-toolbox/lib/input';
 
 class InputTest extends React.Component {
-  state = { name: '', phone: '', email: '', hint: '' };
+  state = { from: '', to: '', radius: '', hint: '' };
 
-  handleChange((name, value){
+  handleChange(name, value){
     this.setState(
-		{name: value}
+		{[name]: value}
 	);
   };
 
   render () {
     return (
       <section>
-        <Input type='text' label='Name' name='name' value={this.state.name} onChange={this.handleChange.bind(this, 'name')} maxLength={16 } />
-        <Input type='text' label='Disabled field' disabled />
-        <Input type='email' label='Email address' icon='email' value={this.state.email} onChange={this.handleChange.bind(this, 'email')} />
-        <Input type='tel' label='Phone' name='phone' icon='phone' value={this.state.phone} onChange={this.handleChange.bind(this, 'phone')} />
-        <Input type='text' value={this.state.hint} label='Required Field' hint='With Hint' required onChange={this.handleChange.bind(this, 'hint')} icon={<span>J</span>} />
+        <Input id="from" type='text' label='Origin' hint="Enter a Location" placeholder='' name='from' value={this.state.from} onChange={this.handleChange.bind(this, 'from')} icon="add_location" />
+		<Input id="to" type='text' label='Destination' hint="Enter a Location" placeholder='' name='to' value={this.state.to} onChange={this.handleChange.bind(this, 'to')} icon="add_location" />
+		<Input id="radius" ref="radius" type='text' label='Radius' hint="Distance from Route" name='radius' value={this.state.radius} onChange={this.handleChange.bind(this, 'radius')} icon="all_out" />
+		<Input id="search" ref="search" type='text' label='Search' hint="Concise Place Description " name='search' value={this.state.search} onChange={this.handleChange.bind(this, 'search')} icon="search" />
       </section>
     );
   }

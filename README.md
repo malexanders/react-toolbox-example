@@ -1,4 +1,4 @@
-# react-toolbox-example
+# roadtrip_react
 
 ### Getting Started
 1. Clone this repository

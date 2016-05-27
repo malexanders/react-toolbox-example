@@ -6,13 +6,13 @@ import Input from 'react-toolbox/lib/input';
 import Header from './components/header';
 import InputTest from './components/inputs';
 import style from './style';
-import MapControl from './imports/ui/App.jsx';
+import MapControl from './components/App.jsx';
 
 ReactDOM.render((
   <div>
     <Header />
     <section className={style.content}>
     </section>
-	<InputTest />
+	<MapControl />
   </div>
 ), document.getElementById('app'));

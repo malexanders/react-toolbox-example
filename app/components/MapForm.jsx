@@ -1,7 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import InputAutocomplete from '../util/InputAutocomplete.js';
 import Input from 'react-toolbox/lib/input';
-// import InputTest from './inputs.jsx';
+import InputTest from '/Users/Macbook/projects/roadtrip_react/app/components/inputs';
+import style from './style';
 
 
 // import keydown from 'react-keydown'
@@ -70,16 +71,15 @@ export default class MapForm extends React.Component {
 	render() {
 		return (
 			<form 	id="calculateRoute"
-					name="calculate-route"
-					className="calculateRoute"
+					name="calculateRoute"
+					className={style.mapForm}
 					onSubmit={this.handleSubmit.bind(this)}>
+			<InputTest />
 
 
-				
 
-
-			<input id="mapFormSubmit" type="submit" value="Submit" />
-				<input type="reset" value="Reset" />
+			<Input id="mapFormSubmit" type="submit" value="Submit" />
+				<Input type="reset" value="Reset" />
 			</form>
 		);
 	}

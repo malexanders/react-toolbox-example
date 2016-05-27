@@ -1,6 +1,10 @@
 @import "~react-toolbox/lib/base";
 @import "~react-toolbox/lib/app_bar/config";
 @import "~react-toolbox/lib/button/config";
+// Feels like bourbon tools should be in it's own file, and import the whole file.
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bourbon-neat/app/assets/stylesheets/neat";
+
 
 $title-font-size: 1.8 * $unit;
 
@@ -21,4 +25,11 @@ $title-font-size: 1.8 * $unit;
     right: $button-floating-height / 2;
     z-index: $z-index-higher;
   }
+}
+
+.mapControl{
+	@include outer-container;
+	.mapForm{
+		@include span-columns(6);
+	}
 }
