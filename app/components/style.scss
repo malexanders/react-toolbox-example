@@ -29,7 +29,7 @@ $title-font-size: 1.8 * $unit;
 
 .mapControl{
 	@include outer-container;
-	.mapForm{
+	> .mapForm{
 		@include span-columns(6);
 	}
 }
