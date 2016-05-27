@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import Button from 'react-toolbox/lib/button';
 import Input from 'react-toolbox/lib/input';
 import Header from './components/header';
-import InputTest from './components/inputs';
 import style from './style';
 import MapControl from './components/App.jsx';
 

@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import style from './style';
 
 var DEFAULT_LOCATION
 
@@ -27,7 +28,7 @@ export default class GMap extends Component {
 	// },
 	render() {
 		return (
-			<div ref='mapElement' className='map-gic'></div>
+			<div ref='mapElement' className={style.gmap}></div>
 		)
 	}
 }

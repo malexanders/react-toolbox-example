@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import InputAutocomplete from '../util/InputAutocomplete.js';
 import Input from 'react-toolbox/lib/input';
-// import InputTest from '/Users/Macbook/projects/roadtrip_react/app/components/inputs';
+
 import style from './style';
 
 
@@ -56,6 +56,18 @@ export default class MapForm extends React.Component {
 	   });
     };
 
+	handleKeyPress(){
+		alert("worked!");
+		alert(keydown.event.which);
+		// if ( keydown.event ) {
+		// 	// inspect the keydown event and decide what to do
+		// 	console.log( keydown.event.which );
+		// 	if(keydown.event.which === 13){
+		// 		$('#mapFormSubmit').trigger('click');
+		// 	}
+		// }
+	}
+
 	handleSubmit(e){
 		e.preventDefault();
 		console.log(this.state.autocomplete);
@@ -70,18 +82,29 @@ export default class MapForm extends React.Component {
 		this.triggerInputAutocomplete();
 	}
 
+	handleReset(){
+		this.setState({
+
+			from: '',
+			to: '',
+			radius: '',
+			search: ''
+		})
+
+	}
+
 	render() {
 		return (
 			<form 	id="calculateRoute"
 				name="calculateRoute"
 				className={style.mapForm}
-				onSubmit={this.handleSubmit.bind(this)}>
+				onSubmit={this.handleSubmit.bind(this)}
+				onReset={this.handleReset.bind(this)}>
 
-				<Input id="from" type='text' label='Origin' hint="Enter a Location" placeholder='' name='from' value={this.state.from} onChange={this.handleChange.bind(this, 'from')} icon="add_location" />
-				<Input id="to" type='text' label='Destination' hint="Enter a Location" placeholder='' name='to' value={this.state.to} onChange={this.handleChange.bind(this, 'to')} icon="add_location" />
-				<Input id="radius" ref="radius" type='text' label='Radius' hint="Distance from Route" name='radius' value={this.state.radius} onChange={this.handleChange.bind(this, 'radius')} icon="all_out" />
-				<Input id="search" ref="search" type='text' label='Search' hint="Concise Place Description " name='search' value={this.state.search} onChange={this.handleChange.bind(this, 'search')} icon="search" />
-
+				<Input id="from" className={style.mapFormInput} type='text' label='Origin' hint="Enter a Location" placeholder='' name='from' value={this.state.from} onChange={this.handleChange.bind(this, 'from')} icon="add_location" />
+				<Input id="to" className={style.mapFormInput} type='text' label='Destination' hint="Enter a Location" placeholder='' name='to' value={this.state.to} onChange={this.handleChange.bind(this, 'to')} icon="add_location" />
+				<Input id="radius" className={style.mapFormInput} ref="radius" type='text' label='Radius' hint="Distance from Route" name='radius' value={this.state.radius} onChange={this.handleChange.bind(this, 'radius')} icon="all_out" />
+				<Input id="search" className={style.mapFormInput} ref="search" type='text' label='Search' hint="Concise Place Description " name='search' value={this.state.search} onChange={this.handleChange.bind(this, 'search')} icon="search" />
 
 				<Input id="mapFormSubmit" type="submit" value="Submit" />
 				<Input type="reset" value="Reset" />
