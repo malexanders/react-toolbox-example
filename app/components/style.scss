@@ -29,9 +29,11 @@ $title-font-size: 1.8 * $unit;
 
 .mapControl{
 	@include outer-container;
-	margin-top: 2em;
+	max-width: 1420px;
+	margin-top: 0em;
 	> .mapForm{
 		@include span-columns(3);
+		margin-right: 0;
 	}
 	> .gmap{
 		@include span-columns(9);

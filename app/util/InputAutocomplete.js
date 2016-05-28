@@ -55,6 +55,7 @@ export default class InputAutocomplete{
 				window.alert("Autocomplete's returned place contains no geometry");
 				// Success!!!
 				// google.maps.event.clearInstanceListeners(originInputElement);
+
 				return;
 			}
 			// MyGlobal.zoom(map, place);

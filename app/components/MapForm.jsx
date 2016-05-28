@@ -51,10 +51,29 @@ export default class MapForm extends React.Component {
 	}
 
 	handleChange(name, value){
+		// if(name === 'from'){
+		// 	if(this.state.autocomplete.originPlace){
+		// 		console.log(this.state.autocomplete.originPlace.formatted_address);
+		// 	}
+		// }
       this.setState({
 		   [name]: value
 	   });
     };
+
+	// handleOriginChange(name, value){
+	//
+	// 	this.setState({
+ //  		   from: value
+ //  	   });
+	// }
+	//
+	// handleDestinationChange(name, value){
+	//
+	// 	this.setState({
+	// 	   [name]: value
+	//    });
+	// }
 
 	handleKeyPress(){
 		alert("worked!");
@@ -77,6 +96,12 @@ export default class MapForm extends React.Component {
 			radius: this.refs.radius.value,
 			search: this.refs.search.value
 		});
+
+		// this.setState({
+		// 	from: this.state.autocomplete.originPlace.formatted_address,
+		// 	to: this.state.autocomplete.destinationPlace.formatted_address
+		// })
+
 		google.maps.event.clearInstanceListeners(this.originInputElement);
 		google.maps.event.clearInstanceListeners(this.destinationInputElement);
 		this.triggerInputAutocomplete();
@@ -84,7 +109,6 @@ export default class MapForm extends React.Component {
 
 	handleReset(){
 		this.setState({
-
 			from: '',
 			to: '',
 			radius: '',
@@ -101,7 +125,7 @@ export default class MapForm extends React.Component {
 				onSubmit={this.handleSubmit.bind(this)}
 				onReset={this.handleReset.bind(this)}>
 
-				<Input id="from" className={style.mapFormInput} type='text' label='Origin' hint="Enter a Location" placeholder='' name='from' value={this.state.from} onChange={this.handleChange.bind(this, 'from')} icon="add_location" />
+				<Input id="from" className={style.mapFormInput} type='text' label='Origin' hint="Enter a Location" placeholder='' name='from' value={this.state.from} onChange={this.handleChange.bind(this, 'from')}  icon="add_location" />
 				<Input id="to" className={style.mapFormInput} type='text' label='Destination' hint="Enter a Location" placeholder='' name='to' value={this.state.to} onChange={this.handleChange.bind(this, 'to')} icon="add_location" />
 				<Input id="radius" className={style.mapFormInput} ref="radius" type='text' label='Radius' hint="Distance from Route" name='radius' value={this.state.radius} onChange={this.handleChange.bind(this, 'radius')} icon="all_out" />
 				<Input id="search" className={style.mapFormInput} ref="search" type='text' label='Search' hint="Concise Place Description " name='search' value={this.state.search} onChange={this.handleChange.bind(this, 'search')} icon="search" />
