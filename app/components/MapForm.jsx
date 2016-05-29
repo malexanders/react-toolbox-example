@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import InputAutocomplete from '../util/InputAutocomplete.js';
 import Input from 'react-toolbox/lib/input';
+import Button from 'react-toolbox/lib/button';
 
 import style from './style';
 
@@ -95,6 +96,8 @@ export default class MapForm extends React.Component {
 		this.triggerInputAutocomplete();
 	}
 
+	
+
 	handleReset(){
 		this.setState({
 			from: '',
@@ -117,6 +120,7 @@ export default class MapForm extends React.Component {
 				<Input id="radius" className={style.mapFormInput} ref="radius" type='text' label='Radius' hint="Distance from Route" name='radius' value={this.state.radius} onChange={this.handleChange.bind(this, 'radius')} icon="all_out" />
 				<Input id="search" className={style.mapFormInput} ref="search" type='text' label='Search' hint="Concise Place Description " name='search' value={this.state.search} onChange={this.handleChange.bind(this, 'search')} icon="search" />
 
+			    <Button icon='add' label='Add this' onClick={this.handleSubmit.bind(this)} flat primary />
 				<Input id="mapFormSubmit" type="submit" value="Submit" />
 				<Input type="reset" value="Reset" />
 			</form>
