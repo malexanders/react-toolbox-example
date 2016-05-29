@@ -55,7 +55,6 @@ export default class InputAutocomplete{
 				window.alert("Autocomplete's returned place contains no geometry");
 				// Success!!!
 				// google.maps.event.clearInstanceListeners(originInputElement);
-
 				return;
 			}
 			// MyGlobal.zoom(map, place);
@@ -80,6 +79,7 @@ export default class InputAutocomplete{
 			// If the place has a geometry, store its place ID and route if we have
 			// the other place ID
 			// MyGlobal.zoom(map, place);
+
 			me.destinationPlace = place;
 			me.destinationPlaceId = place.place_id;
 			// destinationAutocomplete.unbindAll();
