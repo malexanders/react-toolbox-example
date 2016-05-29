@@ -20,15 +20,15 @@ class DialogTest extends React.Component {
 	render () {
 		return (
 			<div className={style.dialogContainer}>
-				<Button className={style.button} onClick={this.handleToggle} icon="add" floating accent/>
+				<Button className={style.button} onClick={this.handleToggle} icon="info" floating accent/>
 				<Dialog
 					actions={this.actions}
 					active={this.state.active}
 					onEscKeyDown={this.handleToggle}
 					onOverlayClick={this.handleToggle}
-					title='My awesome dialog'
+					title='About'
 					>
-					<p>Here you can add arbitrary content. Components like Pickers are using dialogs now.</p>
+					<p>Roadtrippin allows you to search for places along a route within a specified radius. You can add places to a roadtrip object and share it with your favorite allies!(yes, that was a chilli peppers reference)</p>
 				</Dialog>
 			</div>
 		);
