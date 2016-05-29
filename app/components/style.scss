@@ -35,9 +35,18 @@ $title-font-size: 1.8 * $unit;
 	> .mapForm{
 		@include span-columns(3);
 		margin-right: 0;
-		> .submitButtom{
-			height:4.6em;
+
+		> .buttonContainer{
 			width: 100%;
+			text-align: center;
+
+			> .submitButtom{
+				height:4.6em;
+				width: 90%;
+				// background: whitesmoke;
+				border: 1px solid #D2EAFD;
+				margin-bottom: 1em;
+			}
 		}
 	}
 	> .gmap{

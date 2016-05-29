@@ -125,10 +125,12 @@ export default class MapForm extends React.Component {
 				<Input id="to" className={style.mapFormInput} type='text' label='Destination' hint="Enter a Location" placeholder='' name='to' value={this.state.to} onChange={this.handleChange.bind(this, 'to')} icon="add_location" />
 				<Input id="radius" className={style.mapFormInput} ref="radius" type='text' label='Radius' hint="Distance from Route" name='radius' value={this.state.radius} onChange={this.handleChange.bind(this, 'radius')} icon="all_out" />
 				<Input id="search" className={style.mapFormInput} ref="search" type='text' label='Search' hint="Concise Place Description " name='search' value={this.state.search} onChange={this.handleChange.bind(this, 'search')} icon="search" />
-
-				<Button id="formSubmitButton" icon='add' className={style.submitButtom} label='Add this' onClick={this.handleSubmit.bind(this)} flat primary />
-				<Input id="mapFormSubmit" type="submit" value="Submit" />
-				<Input type="reset" value="Reset" />
+				<div className={style.buttonContainer}>
+					<Button id="formSubmitButton" className={style.submitButtom} label='Submit' onClick={this.handleSubmit.bind(this)} flat primary />
+					<Button id="formSubmitButton" className={style.submitButtom} label='Reset' onClick={this.handleReset.bind(this)} flat primary />
+				</div>
+				{/*<Input id="mapFormSubmit" type="submit" value="Submit" />*/}
+				{/*<Input type="reset" value="Reset" />*/}
 			</form>
 		);
 	}
