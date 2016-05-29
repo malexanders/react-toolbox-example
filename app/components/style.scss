@@ -13,18 +13,21 @@ $title-font-size: 1.8 * $unit;
 // ensure the order. You can either set a wrapper or target
 // React Toolbox data attributes to boost
 .appbar {
-  > .title {
-    font-size: $title-font-size;
-    font-weight: $font-weight-bold;
-    position: relative;
-  }
+	> .title {
+		font-size: $title-font-size;
+		font-weight: $font-weight-bold;
+		position: relative;
+	}
 
-  > .button {
-    position: absolute;
-    top: $appbar-height - ($button-floating-height / 2);
-    right: $button-floating-height / 2;
-    z-index: $z-index-higher;
-  }
+	> .dialogContainer{
+		> .button {
+			position: absolute;
+			top: $appbar-height - ($button-floating-height / 2);
+			right: $button-floating-height / 2;
+			z-index: $z-index-higher;
+		}
+	}
+
 }
 
 .mapControl{
