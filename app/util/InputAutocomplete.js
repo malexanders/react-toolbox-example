@@ -57,6 +57,7 @@ export default class InputAutocomplete{
 				// google.maps.event.clearInstanceListeners(originInputElement);
 				return;
 			}
+			console.log(originInputElement.value);
 			// MyGlobal.zoom(map, place);
 			me.originPlace = place;
 			me.originPlaceId = place.place_id;

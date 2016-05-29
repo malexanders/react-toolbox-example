@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MapForm from './MapForm.jsx';
 import GMap from './GMap';
-import FindRoutes from '../util/FindRoutes.js'
+import FindRoutes from '../util/FindRoutes.js';
 import style from './style';
 
 var directionsService,

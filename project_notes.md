@@ -9,6 +9,7 @@
 	* seems confusing to have one large style.scss, and to call the class styles from that one file.
 		* see example in head.jsx
 * look into customizing scss/css
+* difference between `let` and `var`?
 
 #SASS
 
