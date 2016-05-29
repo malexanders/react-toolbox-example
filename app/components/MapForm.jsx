@@ -27,6 +27,12 @@ export default class MapForm extends React.Component {
 		console.log('MapForm mount');
 		this.originInputElement = document.getElementById('from');
 		this.destinationInputElement = document.getElementById('to');
+		$(document).on('keypress', function(e){
+			if (e.keyCode === 13){
+				console.log(e.keyCode);
+				$('#formSubmitButton').click();
+			}
+		})
 	}
 	componentDidUpdate() {
 		console.log("MapForm updated");
@@ -63,7 +69,7 @@ export default class MapForm extends React.Component {
     }
 
 	handleKeyPress(){
-
+		// $('#formSubmitButton').trigger('click');
 
 		// if ( keydown.event ) {
 		// 	// inspect the keydown event and decide what to do
@@ -96,7 +102,7 @@ export default class MapForm extends React.Component {
 		this.triggerInputAutocomplete();
 	}
 
-	
+
 
 	handleReset(){
 		this.setState({
@@ -115,12 +121,12 @@ export default class MapForm extends React.Component {
 				onSubmit={this.handleSubmit.bind(this)}
 				onReset={this.handleReset.bind(this)}>
 
-				 <Input id="from" className={style.mapFormInput} type='text' label='Origin' hint="Enter a Location" placeholder='' name='from' value={this.state.from} onChange={this.handleChange.bind(this, 'from')} onKeyPress={this.handleKeyPress()}  icon="add_location" />
+				<Input id="from" className={style.mapFormInput} type='text' label='Origin' hint="Enter a Location" placeholder='' name='from' value={this.state.from} onChange={this.handleChange.bind(this, 'from')} onKeyPress={this.handleKeyPress()}  icon="add_location" />
 				<Input id="to" className={style.mapFormInput} type='text' label='Destination' hint="Enter a Location" placeholder='' name='to' value={this.state.to} onChange={this.handleChange.bind(this, 'to')} icon="add_location" />
 				<Input id="radius" className={style.mapFormInput} ref="radius" type='text' label='Radius' hint="Distance from Route" name='radius' value={this.state.radius} onChange={this.handleChange.bind(this, 'radius')} icon="all_out" />
 				<Input id="search" className={style.mapFormInput} ref="search" type='text' label='Search' hint="Concise Place Description " name='search' value={this.state.search} onChange={this.handleChange.bind(this, 'search')} icon="search" />
 
-			    <Button icon='add' label='Add this' onClick={this.handleSubmit.bind(this)} flat primary />
+				<Button id="formSubmitButton" icon='add' className={style.submitButtom} label='Add this' onClick={this.handleSubmit.bind(this)} flat primary />
 				<Input id="mapFormSubmit" type="submit" value="Submit" />
 				<Input type="reset" value="Reset" />
 			</form>

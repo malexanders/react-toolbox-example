@@ -10,8 +10,6 @@ import MapControl from './components/App.jsx';
 ReactDOM.render((
   <div>
     <Header />
-    <section className={style.content}>
-    </section>
 	<MapControl />
   </div>
 ), document.getElementById('app'));
